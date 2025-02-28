@@ -1,4 +1,3 @@
-// pages/index.tsx
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import Loader from "@/components/Loader";
@@ -74,12 +73,10 @@ export default function Home() {
     handlePokemonList();
   }, []);
 
-  // Effect to call the debounced search function when the search term changes
   useEffect(() => {
     filterPokemons(name);
   }, [name, filterPokemons]);
 
-  // Handle page change when clicking on next or previous
   const handlePageChange = (url: string | null, direction: 'next' | 'prev'): void => {
     if (url) {
       setCurrentPage((prev) => direction === 'next' ? prev + 1 : prev - 1);
@@ -97,7 +94,7 @@ export default function Home() {
         Pokemon Explorer
       </h2>
 
-      {/* Updated SearchBox */}
+      
       <div className="max-w-sm mx-auto mb-10">
         <div className="relative">
           <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
@@ -143,7 +140,7 @@ export default function Home() {
                   style={{filter: "drop-shadow(2px 4px 6px black)"}}
                   alt={pokemon.name} 
                   className="w-full drop-shadow-2xl h-40 object-contain mb-4 scale-y-100"
-                  width={200} // Adjust the width and height as needed
+                  width={200}
                   height={200}
                   priority
                 />

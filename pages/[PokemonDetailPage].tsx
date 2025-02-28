@@ -1,4 +1,3 @@
-// pages/pokemon/[name].tsx
 import { useState, useEffect } from "react";
 import Loader from "@/components/Loader";
 import { useRouter } from "next/router";
@@ -50,7 +49,7 @@ interface PokemonDetail {
 export default function PokemonDetailPage() {
  
   const router = useRouter();
-  const { PokemonDetailPage: name } = router.query; // Getting the dynamic Pokemon name from the URL
+  const { PokemonDetailPage: name } = router.query; 
   const [pokemon, setPokemon] = useState<PokemonDetail | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
